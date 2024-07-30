@@ -52,3 +52,27 @@ ALTER TABLE
   "campaign"
 ADD
   CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id") REFERENCES "subcategory" ("subcategory_id");
+
+/*
+COPY contacts (contact_id, first_name, last_name, email)
+FROM '/tmp/contacts.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY category (category_id, category)
+FROM '/tmp/category.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY subcategory (subcategory_id, subcategory)
+FROM '/tmp/subcategory.csv'
+DELIMITER ','
+CSV HEADER;
+
+COPY campaign (cf_id, contact_id, company_name, description, goal, pledged, outcome, backers_count, country, currency, launch_date, end_date, category_id, subcategory_id)
+FROM '/tmp/campaign.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT * FROM campaign
+*/
